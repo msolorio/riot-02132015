@@ -15,19 +15,28 @@
 
 <body>
 	<!-- custom tag in the body -->
-	<my-name></my-name>
+	<movie></movie>
 	
 	<!-- script type riot/tag, containing the custom tag -->
 	<script type="riot/tag">
-		<my-name>
-			<h1>My Name is: {text}</h1>
-			this.text="Sandeep"
-		</my-name>
+		<movie>
+			<h2>{title}</h2>
+			<p>Description: {description}</p>
+			<p>Characters</p>
+			<ul>
+				<li>{characters[0]}</li>
+				<li>{characters[1]}</li>
+				<li>{characters[2]}</li>
+			</ul>
+			this.title = "Star Wars: The Force Awakens"
+			this.description = 'This is episode VII of the Star Wars Saga, set 30 years after the end of Return of the Jedi.'
+			this.characters = ['Rey', 'Finn', 'Chewy'];
+		</movie>
 	</script>
 	
 	<!-- script tag with riot.mount('custom-tag-name') -->
 	<script>
-		riot.mount('my-name');
+		riot.mount('movie');
 	</script>
   
 </body>
